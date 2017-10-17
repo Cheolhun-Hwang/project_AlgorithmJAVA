@@ -47,11 +47,6 @@ public class wood {
 			}
 			temp[j] = max;
 		}
-		
-		
-		/*for(int k = 0; k < temp.length ; k++) {
-			System.out.println(temp[k]);
-		}*/
 		System.out.println(temp[purp]);
 		return temp[purp];
 	}
