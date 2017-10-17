@@ -35,19 +35,24 @@ public class wood {
 	}
 	
 	static public int calc(int purp, int[] wd) {
-		int[] temp = wd;
-		
-		System.out.println("temp : " + temp[purp] + " / wd : " + wd[purp] + " / purp : " + purp);
-		
-		for(int j = 1; j<purp ; j++) {
-			int max = -1;
+		int[] temp = new int[wd.length];
+		temp = wd;
+		int max = -1;
+				
+		for(int j = 1; j<purp+1 ; j++) {
+			max = -1;
 			for(int i=0;i<j;i++) {
-				Math.max(max, wd[i] + temp[j-i]);
+				max = Math.max(max, wd[i] + temp[j-i]);
+				System.out.println("wd[" + i + "] : " + wd[i] + " / temp[" + (j-i) + "] : " + temp[j-i] + " / max : " + max);
 			}
 			temp[j] = max;
 		}
 		
 		
+		/*for(int k = 0; k < temp.length ; k++) {
+			System.out.println(temp[k]);
+		}*/
+		System.out.println(temp[purp]);
 		return temp[purp];
 	}
 	
